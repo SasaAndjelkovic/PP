@@ -13,8 +13,6 @@
     }
     array [minimumIndex] = Infinity;
 
-    console.log (array);
-
 for (i = 0; i < array.length; i++) {
      if (array [i] < elementLarger) { 
         elementLarger = array [i];
