@@ -53,11 +53,11 @@ console.log (result4);
 //*   *
 //*****
 
-function sqaureDraw () {
+function sqaureDraw (a) {
     var field = "";
-    for (var i = 0; i < 5; i++){
-        for (var j = 0; j < 5; j++) {
-            if (i > 0 && i < 4 && j > 0  && j < 4) {
+    for (var i = 0; i < a; i++){
+        for (var j = 0; j < a; j++) {
+            if (i > 0 && i < a-1 && j > 0  && j < a-1) {
                 field += " ";
             } else {
                 field += "*";
@@ -68,7 +68,7 @@ function sqaureDraw () {
     return field;
 }
 
-var result5 = sqaureDraw();
+var result5 = sqaureDraw(7);
 console.log (result5);
 
 //6.	Write a program that draws a horizontal chart representing three given values. For example, if values are 5, 3, and 7, the program should draw:
