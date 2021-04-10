@@ -261,4 +261,4 @@ function greatestCommonDivisor (a, b) {
     return gcd;
 }
 
-console.log (greatestCommonDivisor(192, 42));
+console.log (greatestCommonDivisor(8, 16));
