@@ -137,7 +137,7 @@ var cubeVolume = function (a) {
     return calc(a);                                 //calc is not a function
  }
  
- output = cubeCalculation(10, cubeVolume(6))
+ output = cubeCalculation(10, cubeVolume(6))        //cubeVolume je ok
  console.log(output);
 
 
