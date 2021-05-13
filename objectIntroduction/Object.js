@@ -177,14 +177,48 @@ function createRecipe (nm, toc, comp, ingredients, ptime, ins) {
     return recipe;
 }
 
-createRecipe ('musaka', 'mediteran', 2, ['potato', 'minsemeat', 'celery'], 45, 'some way etc.');
-console.log (recipe);
+console.log (createRecipe ('musaka', 'mediteran', 2, ['potato', 'minsemeat', 'celery'], 45, 'some way etc.'));
 
 //Kako pozvati jedan element ili funkciju?
 
+/*Ovako: :)
 
+function Project (nm, toc, comp, ingredients, ptime, ins) {
+        this.name = nm;
+        this.typeOfCuisine = toc;
+        this.complexity = comp;
+        this.listOfIngredients = ingredients;
+        this.preparingTime = ptime;
+        this.preparingInstuction = ins;
+        this.printIngredients = function () {
+            console.log (this.listOfIngredients);
+        };
+        this.is15MinutePrepared = function () {
+            return (this.preparingTime <= 15) ? 'meal can be prepared for 15 minutes or less' : 'meal can`t be prepared for 15 minutes';
+        };
+        this.changeType = function (ntoc) {
+            this.typeOfCuisine = ntoc; 
+        };
+        this.deleteAnIngredient = function (del) {
+            function checkIngredient (ing) {    
+                return ing !== del;
+            }
+        this.listOfIngredients = this.listOfIngredients.filter(checkIngredient);
+        };
+    }
 
-
+var recipe = new Project (
+    'musaka', 
+    'mediteran', 
+    2, 
+    ['potato', 'minsemeat', 'celery'], 
+    45, 
+    'some way etc.'
+)
    
 
+console.log (recipe);
+recipe.deleteAnIngredient('minsemeat')
+console.log (recipe);
+console.log (recipe.is15MinutePrepared());*/
   
