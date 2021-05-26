@@ -297,17 +297,3 @@ var result = test(hello);              //argument je funckija hello. ako zadamo 
 console.log(result);
 
 
-//preDifenedFunc map & filter
-
-var array = [1, 2, 3, 4, 5];
-
-var newArray = array.map (function(item) {       //sintaksno, posle item nema )
-   return item+1;
-})                                               // ) je ovde
-
-var filteredArray = array.filter (function(number) {
-   return number % 2 === 0;
-})
-
-console.log(newArray);
-console.log(filteredArray);
