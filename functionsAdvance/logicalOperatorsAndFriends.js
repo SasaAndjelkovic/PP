@@ -195,3 +195,24 @@ function sumNumbers(num1, num2) {
 }
 var result = sumNumbers(10, 1);
 console.log(result); // => 10 (return is 10)
+
+
+// Example 11
+
+var string = 'string';            // => string
+
+var one = !string;                // => false
+
+var two = !!string;               // => true
+
+console.log (string, one, two); 
+
+// Example 12
+
+var string;                       // => undefined
+
+var one = !string;                // => true
+
+var two = !!string;               // => false
+
+console.log (string, one, two); 
