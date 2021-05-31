@@ -79,7 +79,7 @@ Create constructor functions with properties representing the following:*/
         }
 
         this.relation = relation;
-        this.date = new Date(date);      //
+        this.date = new Date(date);      //pogledaj TIMESTAMP
         this.listOfPassengers = [];
         //Add addPassenger method to Flight. 
         //It should receive Passenger and add the passenger to the passenger list of a given flight.
@@ -219,8 +219,9 @@ Create constructor functions with properties representing the following:*/
 
     //console.log(belgradeParis.listOfPassengers[0].person.name);  // =>Marija
     //belgradeParis.addPassenger(passenger);
-    console.log(belgradeParis.getData());
-    
+    //console.log(belgradeParis.getData());
+    //console.log (seat.number);
+    console.log (nikolaTesla.getPassengersNumber());
 
 }) ()
 

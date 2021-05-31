@@ -284,11 +284,13 @@ var list = [
   {name: 'bananas', price: 150}
   ];
 
+console.log(list.price);
+
 function mostExpensiveProduct (param) {
   var priceList = param.map(function(a){
     return a.price;
   });
-  var maxPrice = priceList.reduce(function(a, b) {
+  var maxPrice = param.reduce(function(a, b) {
     return Math.max(a, b);
   });
   var indexMax = priceList.indexOf(maxPrice);
