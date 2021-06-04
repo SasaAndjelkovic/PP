@@ -12,17 +12,28 @@ Create constructor functions with properties representing the following:*/
 
 (function () {
 
+	//Create continents as constants (objects that can not change). 
+	//So, when passing a continent as a parameter, you should pass Continent.ASIA.
+	var continents = {
+		ASIA : "AS",
+		EUROPE : "EU",
+		AFRICA : "AF",
+		SOUTH_AMERICA : "SA",
+		NORTH_AMERICA : "NA",
+		AUSTRALIA : "AU"
+	};
+
 	//●	Country - name, odds, continent (EU, AS, AF, SA, NA, AU)
 	function Country (name, odds, continent) {
-		if (!name || !odds || !continent) {
+		/*if (!name || !odds || !continent) {
 			throw new Error ('Fields name, odds are required')
-		};
-		var continent = continent.toUppercase();
-		if (/*continent !=='EU'|| continent !== 'AS' || continent !=='AF' || 
+		};*/
+		var continent = continent;
+		/*if (/*continent !=='EU'|| continent !== 'AS' || continent !=='AF' || 
 			continent !=='SA' || continent !=='NA' || continent !=='AU'*/
-			!['EU', 'AS', 'AF', 'SA', 'NA', 'AU'].includes(continent)) {
+			/*!['EU', 'AS', 'AF', 'SA', 'NA', 'AU'].includes(continent)) {
 			throw new Error ('Required fields are: EU, AS, AF, SA, NA, AU')
-		};
+		}; */
 		this.name = name;
 		this.odds = odds; 
 		this.continent = continent;
@@ -30,9 +41,9 @@ Create constructor functions with properties representing the following:*/
 
 	//●	Person - name, surname, date of birth
 	function Person (name, surname, dateOfBirth) {
-		if (!name || !surname || !!dateOfBirth) {
+		/*if (!name || !surname || !!dateOfBirth) {
 			throw new Error ('Fields name, surname and date of birth are reqiured')
-		};
+		};*/
 		this.name = name;
 		this.surname = surname;
 		this.dateOfBirth = dateOfBirth;
@@ -45,12 +56,12 @@ Create constructor functions with properties representing the following:*/
 
 	//●	Player - person, bet amount, country (instance of Country)
 	function Player (person, betAmount, country) {
-		if (!person || !betAmount || !country) {
+		/*if (!person || !betAmount || !country) {
 			throw new Error ('Fields person, bet amount and country are reqiured')
 		}
 		if (!(country instanceof Country)) {
 			throw new Error ('Invalid country data')
-		}
+		}*/
 		this.person = person;
 		this.betAmount = betAmount;
 		this.country = country;
@@ -58,7 +69,8 @@ Create constructor functions with properties representing the following:*/
 	    //expected win amount (odds * bet amount) and person data.
         //SR, 1050.00 eur, Pera Peric, 29 years
 		this.getData = function () {
-			this.winAmount = this.odds * this.betAmount
+			console.log (this.country.odds);
+			this.winAmount = this.country.odds * this.betAmount         //tako se poziva vrednost iz drugog konstruktora
 			return this.country + ', ' + this.winAmount + ', ' + this.person;
 		}
 	}
@@ -100,7 +112,7 @@ Create constructor functions with properties representing the following:*/
 		//Add a method to BettingPlace that adds a player to the players list of a betting place. 
 		this.addPlayer = function (player) {
             if (!player || !(player instanceof Player)) {
-                throw new Error ('Invalid flight data');
+                throw new Error ('Invalid player data');
             }
             this.listOfPlayers.push(player);
 		}
@@ -108,7 +120,7 @@ Create constructor functions with properties representing the following:*/
 
 	//●	BettingHouse - competition, list of betting places (initially empty) and number of players
 	function BettingHouse (competition, listOfBettingPlaces, numberOfPlayers) {
-		if (!competition || !numberOfPlayers) {
+		if (!competition) {
 			throw new Error ('Fields competition and number of players are reqiured')
 		}
 		this.competition = competition;
@@ -117,42 +129,29 @@ Create constructor functions with properties representing the following:*/
 	}
 
 	//Inside your immediately-invoking function, add a function that returns a created Player.
-	function createPlayer (person, betAmount, country) {
-        var person = new Person(name, surname, dateOfBirth);
-        var betAmount = this.betAmount;
-		var country = new Country(name, odds, continent);
+	function createPlayer (nameP, surname, dateOfBirth, nameC, odds, continent, betAmount, country) {
+        var person = new Person(nameP, surname, dateOfBirth);  //dve promeniljive pod name... posle toga nameP i nameC
+        //var betAmount = this.betAmount;
+		var country = new Country(nameC, odds, continent);
         return new Player (person, betAmount, dateOfBirth);
     }
 
 	//Inside your immediately-invoking function, add a function that creates a BettingPlace.
-	function createBettingPlace (address, listOfPlayers) {
+	function createBettingPlace (country, city, postalCode, street, number) {
 		var address = new Address (country, city, postalCode, street, number);
-		var listOfPlayers = this.listOfPlayers;
-		return new BettingPlace (address, listOfPlayers);
+		return new BettingPlace (address);
 	}
 
 
 
 	//testing
 
-
-
-	//Create continents as constants (objects that can not change). 
-	//So, when passing a continent as a parameter, you should pass Continent.ASIA.
-	function Continent (continent) {
-		this.continent = continent;
-	}
-
-	const europe = new Continent ('EUROPE');
-	const asia = new Continent ('ASIA');
-	const africa = new Continent ('AFRICA');
-	const souhtAmerica = new Continent ('SOUTH AMERICA');
-	const northAmerica = new Continent ('NORTH AMERICA');
-	const austalia = new Continent ('AUSTRALIA');
+	var srbija = new Country ('Srbija', 34, 'EU');
+	console.log (srbija);
 
 	//Create an instance of the BettingHouse that receives the name of competition.
 
-	var austaliaOpen = new BettingHouse.competition ('Australia Open');
+	var austaliaOpen = new BettingHouse ('Australia Open');
 
 	//Create four players with random data. 
 	
@@ -162,15 +161,23 @@ Create constructor functions with properties representing the following:*/
 	var player4 = createPlayer ('Goran Ivanisevic', 200, 'HR');
 	
 	//Create two betting places. 
-	
+	/*
 	var bettingPlace1 = createBettingPlace ('Dimitrija Tucovica', listOfPlayers);
 	var bettingPlace2 = createBettingPlace ('Djordje Stanojevic', listOfPlayers);
-	
+	*/
 	//Add created players as you wish to Betting places.
 
+	/*bettingPlace1.addPlayer(player3);
+	bettingPlace1.addPlayer(player4);
+
+	bettingPlace2.addPlayer(player1);
+	bettingPlace2.addPlayer(player2);*/
 
 
     //Add betting places to the betting house.
+
+	// meridianBet.addBetPlace(belgradeBet);
+	// meridianBet.addBetPlace(lisabonBet);
 
 
 

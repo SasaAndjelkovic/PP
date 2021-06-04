@@ -502,3 +502,13 @@ Input: [3, 6, 11, 2, 9, 1]
 
 Output: [6, 2, 9, 1, 3, 11] (it can be any random permutation of the given array)*/
 
+//Dario Big Help:
+
+function shuffle(array) {
+  array.sort(function() {
+		return Math.random() - 0.5;
+	})
+}
+var arr = [3, 6, 11, 2, 9, 1]
+shuffle(arr);
+console.log(arr);
