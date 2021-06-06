@@ -512,3 +512,10 @@ function shuffle(array) {
 var arr = [3, 6, 11, 2, 9, 1]
 shuffle(arr);
 console.log(arr);
+
+transform (2);
+function transform (a) {
+  console.log (a);
+}
+
+
