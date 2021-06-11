@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JS Odaberite najvišeg elementa</title>
+
+    <style>
+        .highlight {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <button type="button" onclick="najvisiElementHtml();">najvisi Element Html</button>
+    <button type="button" onclick="elementHead();">element Head</button>
+    <button type="button" onclick="elementBody();">element Body</button>
+    <button type="button" onclick="odabirElementaPremaId();">odabir elementa po Id</button>
+    <button type="button" onclick="odabirElemenataPremaKlasi();">odabir elementa po Klasama</button>
+    <button type="button" onclick="odabirElemenataPremaNazivuOznake ();">Prema Nazivu Oznake</button>
+    <button type="button" onclick="cssSelektori ();">CSS Selektori</button>
+    <button type="button" onclick="stiloviNaElementima ();">Stilovi na elementima</button>
+    <button type="button" onclick="informacijaOStilu ();">Informacija o stilu</button>
+    <button type="button" onclick="izracunateInformacijeStila  ();">Izracunate informacije stila </button>
+    <button type="button" onclick="zamenaCSSKlase ();">Zamena CSS klase</button>
+    <button type="button" onclick="vrednostAtributa ();">Vrednost atributa</button>
+    <button type="button" onclick="dodavanjeNovihElemenata ();">Dodavanje novih elemenata</button>
+    <button type="button" onclick="removeElement()">Ukloni element</button>
+    <button type="button" onclick="replaceParagraph()">Zameni paragraf</button>
+    
+
+    
+    <p id="mark" style="color:green; font-size:20px;" >Ovo je id mark paragraf.</p>
+    <p>Ovo je neki obican paragraf.</p>
+    <p class="test">Ovo je test klasa paragraf.</p>
+    <div id="info" class="block test">Ovo je block test klasa div.</div>
+    <p>Ovo je drugi obican paragraf.</p> 
+
+    <div id="main">
+        <p id="hint">Jadan ovaj paragraf: ili ce biti obrisan ili zamenjen.</p>
+      </div>
+
+
+    <ul>
+        <li>Hleb</li>
+        <li class="tick">Kafa</li>
+        <li>Kolač</li>
+    </ul>
+
+
+    <p><a href="https://www.google.com/" target="_blank" id="myLink">Google</a></p>
+
+
+
+    <script src="2dom.js"></script>
+</body>
+</html>

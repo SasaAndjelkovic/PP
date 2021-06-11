@@ -68,7 +68,7 @@ function checkJavaEnabled() {
 var message = "Zdravo! Kliknite OK da biste nastavili.";
     alert(message);
      
-/* Sljedeći se red neće izvršiti dok ne odbacite prethodno upozorenje */
+/* Sledeći se red neće izvršiti dok ne odbacite prethodno upozorenje */
     alert("Ovo je još jedan okvir za upozorenje.");
 
 
