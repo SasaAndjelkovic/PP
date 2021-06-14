@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Using Event Listeners</title>
+    <!--<link rel="stylesheet" href="eventsUsingEventListeners.css">-->
+</head>
+<body>
+    <div class="footbalField">
+        <img src="./player.png" alt="player" >
+    </div>
+
+    <!--<script src="eventsUsingEventListeners.js"></script>-->
+
+</body>
+
+<style>
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+.footbalField{
+    /*border:solid 1px blue;*/
+    position:relative;
+    padding-left: 50px;
+    width:90%;
+    height:600px;
+    margin: 0px auto;
+    background-image: url("field.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+img{
+    position: absolute;
+    top:0px;
+    left:0px;
+    height:50px;
+    width:50px;
+}
+
+</style>
+
+<script>
+var playerNode=document.querySelector("img");
+var field=document.querySelector(".footbalField");
+var clickHandler=function(e){
+    var x=e.clientX-90;
+    var y=e.clientY-50;
+    var style="top:" + y + "px; left:" + x + "px;";
+    playerNode.setAttribute("style",style);
+}
+field.addEventListener("click",clickHandler)
+
+</script>
+
+</html>

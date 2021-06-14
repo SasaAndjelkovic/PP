@@ -1,0 +1,78 @@
+<!--From Jovana Obradović to Me:  (Privately) 03:48 PM -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handlers Definedon DOM Elements</title>
+    <!--<link rel="stylesheet" href="eventHandlersDefinedonDOMElements.css">-->
+</head>
+<body>
+    <form action="">
+        <div id="conversation"> </div>
+        <div class="div">
+            <input type="text" name="message" id="message" size="31" maxlength="300"/>
+            <input type="submit" id="submit"  value="Send">
+        </div>
+    </form>
+    <!--<script src="eventHandlersDefinedonDOMElements.js"></script>-->
+</body>
+
+<style>
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+.div{
+    width:fit-content;
+}
+#conversation, .div{
+    margin:10px auto;
+    display:block;
+}
+#conversation{
+    margin-top: 30px;
+    width:370px;
+    height: 400px;
+    border: 1px solid rgb(137, 137, 187);
+    overflow: scroll;
+}
+#submit{
+    border: 1px solid rgb(137, 137, 187);
+    width:110px;
+    background-color: #C1392B;
+    color: ivory;
+}
+.newMes{
+    padding: 3px 7px;
+    width: fit-content;
+    background-color: rgb(187, 186, 186);
+    display: block;
+    margin-top:8px;
+    margin-left: 5px;
+    word-break: break-all;
+}
+
+</style>
+
+<script>
+    var button=document.querySelector("#submit");
+    button.onclick=function send(e){
+    e.preventDefault();
+    var txt=document.querySelector("#message").value;
+    var txtArea=document.querySelector("#conversation");
+    var newMessage = document.createTextNode(txt);
+    var contForNewMessage=document.createElement("div");
+    contForNewMessage.className="newMes";
+    contForNewMessage.appendChild(newMessage);
+    txtArea.appendChild(contForNewMessage);
+    var txt=document.querySelector("#message").value="";
+    document.getElementById('conversation').scrollTop = 9999999;
+}
+</script>
+</html>
+
+
+
+

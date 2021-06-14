@@ -1,0 +1,77 @@
+<!--From Jovana Obradović to Me: (Privately) 12:40 PM--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handlers from HTML</title>
+    <!---<link rel="stylesheet" href="eventHandlersFromHTML.css">--->
+</head>
+<body>
+    <div class="button">
+        <input type="button" value="Toggle Background" onclick="handler()">
+    </div>
+
+    <div class="button" id="yellowButton">
+        <input type="button" value="Turn Off" onclick="deactivateButton()">
+    </div>
+
+    <!--<script src="eventHandlersFromHtml.js"></script>--->
+</body>
+
+
+<style>
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+body{
+    background-color: #2D3E4F;
+}
+.button{
+    width:150px;
+    height:40px;
+    margin:200px auto 0px auto;
+}
+#yellowButton{
+    margin-top:20px;
+}
+#yellowButton *{
+    background-color: #FFBF28;
+}
+input{
+    width:100%;
+    height:100%;
+    background-color: #C1392B;
+    color: ivory;
+}
+.whiteBCKG{
+    background-color: ivory;
+}
+
+</style>
+
+<script>
+var changeBCKG=function (){
+   var bodyNode=document.querySelector("body");
+    bodyNode.classList.toggle("whiteBCKG")
+}
+var handler = changeBCKG;  //dario
+
+function deactivateButton(){
+    var inputNode=document.querySelector("#yellowButton > input");
+    if(inputNode.getAttribute("value")==="Turn Off"){
+        handler=0;
+        console.log(inputNode)
+        inputNode.setAttribute("value","Turn On")
+        console.log(inputNode.nodeValue)
+    }else{
+        handler = changeBCKG;
+        inputNode.setAttribute("value","Turn Off")
+    }
+}
+
+</script>
+
+</html>

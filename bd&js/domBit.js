@@ -9,10 +9,10 @@ var htmlNode = document.documentElement;
 
 var bodyNode = htmlNode.childNodes[2];
 
-// console.log(bodyNode);  // => na konzoli se vidi ceo html document
-// console.log(bodyNode.tagName); // => HTML
+// console.log(bodyNode);  // => <body>...</body>
+// console.log(bodyNode.tagName); // => BODY
 // console.log(bodyNode.hasChildNodes()); // => true
-// console.log(bodyNode.childNodes.length); //=> 3
+// console.log(bodyNode.childNodes.length); //=> 14
 // console.log(bodyNode.childNodes);
 // console.log(bodyNode.childNodes[0]);
 
@@ -45,7 +45,10 @@ var htmlNode = bodyNode.parentElement;  // previousElementSibling, nextElementSi
 
 var thNode = document.querySelector('th');
 thTextNode = thNode.childNodes[0];
+// console.log(thTextNode);
+// console.log (document.querySelector('th').childNodes[0]);
 thTextNode.nodeValue = 'nesto drugo';
+
 //thTextNode.textContent = 'nesto drugo';
 //console.log(thTextNode);
 
