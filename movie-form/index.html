@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Movie Form Practical</title>
+</head>
+<body>
+    <h1>Movie festival</h1>
+    <div class="jedina">
+        <p>Please fill in the form</p>
+        <p>Movie</p>
+        <form>
+            <label for="title">Title</label>
+            <input type="text" id="title">
+            <label for="length">Length (min)</label>
+            <input type="text" id="length">
+            <!--opadajuci meni-->
+            <label for="title">Select Genre</label>
+            <select>
+                <option value="">---</option>
+                <option value="kusturica">Kusturica</option>
+                <option value="tarkovski">Tarkovski</option>
+                <option value="ksislovski">Ksislovski</option>
+                <option value="linklejter">Linklejter</option>
+            </select>
+            <input type="button" value="Create movie" class="button" id="create-movie">
+            <ul id="movie-list"></ul>
+        </form>
+        <p>Program</p>
+        <form>
+            <label for="date">Date</label>
+            <input type="date" id="date">
+            <input type="button" value="Create program" class="button" id="create-program">
+            <ul id="program-list"></ul>
+            <label for="movie-select">Movie</label>
+            <!--opadajuci meni-- ubacivanje iz funkcije Movie.getData-->
+            <select>
+                <option value="">---</option>
+            </select>
+            <label for="program-select">Program</label>
+            <!--opadajuci meni-->
+            <select>
+                <option value="">---</option>
+            </select>
+            <input type="button" value="Add movie to program" class="button" id="add-movie">
+
+        </form>
+
+    </div>
+
+    <!--
+    <script src="./js/entities.js"></script>
+    <script src=".js/form"></script>-->
+    
+</body>
+</html>

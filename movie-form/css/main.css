@@ -1,0 +1,95 @@
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  margin: 0px;
+}
+
+body {
+  border: solid 10px red;
+}
+.jedina{
+  border: solid 1px black;
+  margin: 0 10px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 10px solid rebeccapurple;
+  padding: 10px;
+}
+
+.button{
+  background-color: #4caf4f;
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+
+.select{
+  border-radius: 5px;
+  border: none;
+  background-color: #f8f8f8;
+}
+
+.select:focus{
+  border: 3px solid #c9e1f9;
+}
+
+/*
+
+
+.field_width{
+  width: 100%;
+  padding: 10px;
+}
+}
+button:active{
+  border: 3px solid #c9e1f9;
+}
+
+ul{
+  list-style-type: disc;
+}
+
+li:nth-child(odd){
+  background-color: #f8f8f8; 
+}
+*/
+
+/*
+div {
+  width: 90%;
+  padding: 15px;
+  margin: 10px auto;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+  padding: 10px;
+  
+}
+.button {
+  width: 100%;
+  height: 40px;
+  color: white;
+  background-color: green;
+  border-radius: 5px;    
+}
+input {
+  padding: 5px;
+  width: 98%;
+}
+
+select {
+  width: 100%;
+}
+
+*/
