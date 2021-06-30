@@ -1,0 +1,44 @@
+<!--
+Intro
+    Create a page that is using the jQuery library
+    Print ‘Hello, world!’ in console when DOM loads
+Selecting
+    Create a page that contains navigation (ul element)
+    Navigation should contain odd number of elements
+    Select the first element of the list and give it a bottom border
+    Select all list elements and transform their text to uppercase
+    Select active element of the list and change its font color
+    Find the middle one and change its background color
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Exercise</title>
+</head>
+<body>
+    <ul>
+        <li class="stop">prvi</li>
+        <li>drugi</li>
+        <li class="active">treci</li>
+        <li>cetvrti</li>
+        <li class="stop">peti</li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            console.log("Hello world!");
+        });
+
+        $("li:first").css("border-bottom", "solid black 1px");
+        $("li").css("text-transform", "uppercase");
+        $("li.active").css("color", "blue");
+        // $('li:not(:first-child):not(:last-child)').css('background-color', 'yellow');
+        $("li:nth-child(3)").css('background-color', 'yellow');
+
+    </script>
+</body>
+</html>

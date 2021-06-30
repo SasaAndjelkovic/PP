@@ -11,15 +11,13 @@ function Movie (title, length, genre) {
 
 Movie.prototype.getGenreCode = function () {
     var firstLetter = this.genre[0].toUpperCase();
-    var lastLetter = this.genre[this.genre.length-1].toUpperCase;
+    var lastLetter = this.genre[this.genre.length-1].toUpperCase();
     return firstLetter + lastLetter;
 }
 
 Movie.prototype.getData = function () {
     return this.title + ", " + this.length + "min, " + this.getGenreCode ();
 }
-
-//nedostaje 5ak redova
 
 function Program (date) {
     this.date = new Date(date);
@@ -34,12 +32,12 @@ Program.prototype.lengthOfAllMovie = function () {
     return sumOfMinutes;
 }
 
-Program.prototyp.addMovie = function (movie) {
+Program.prototype.addMovie = function (movie) {
     this.listOfMovies.push(movie);
 }
 
 Program.prototype.getTotalMovies = function () {
-    return this.listOfMovies.length
+    return this.listOfMovies.length;
 }
 
 Program.prototype.getData = function () {

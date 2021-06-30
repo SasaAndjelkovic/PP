@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Click Handler Demo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("p").text("Hello World!");
+            });            
+        });
+    </script>
+</head>
+<body>
+    <p>Nemoj još učitati.</p>
+    <button type="button">Zameni tekst!</button>
+</body>
+</html>

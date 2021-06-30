@@ -11,6 +11,7 @@ h1 {
 body {
   border: solid 10px red;
 }
+
 .jedina{
   border: solid 1px black;
   margin: 0 10px;
@@ -32,7 +33,6 @@ form{
   border: none;
   font-weight: bold;
 }
-
 
 .select{
   border-radius: 5px;

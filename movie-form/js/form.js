@@ -1,6 +1,6 @@
 var festival = new Festival ();
 
- var createMovieButton = document.querySelector("#create-movie"),
+var createMovieButton = document.querySelector("#create-movie"),
     createProgramButton = document.querySelector("#create-program"),
     addMovieToProgramButton = document.querySelector("#add-movie"),
     inputTitleElement = document.querySelector("#title"),
