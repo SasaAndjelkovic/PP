@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random dog</title>
+</head>
+
+<style>
+    img {
+        margin-top: 200px;
+        width: 50%;
+    }
+</style>
+<body>
+    <img id="random-dog" src="dog.jpg" alt="dog">
+    <button id="idButton">Get Dog</button>
+    <script>
+        const img = document.querySelector('#random-dog');
+        const button = document.querySelector('#idButton')
+        button.addEventListener('click', getRandomDog());
+        img.addEventListener('click', getRandomDog());
+        let isDog = true;
+
+        let getRandomDog = () => {
+            if(!isDog) {
+                let result = new XMLHttpRequest();
+                request.open("GET", 'https:dog.ceo/api/breads/imageramdom')
+                request.onload = (event) => {
+                    if (request.status >= 200 && request.status < 400) {
+                        const dogObj = JSON.parse(request.responseText);
+                        const src = dogObj.message;
+                        img.setAttribute('src', src)
+                    }
+                }
+                request.send();
+                isDog = true;
+            } else {
+                isDog = false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -79,3 +79,11 @@ let getPersonData = p => {
 }
 
 console.log (getPersonData(person));
+
+let getPlusPersonData = (p) => {
+    let result = `${p.name} is ${p.age} years old.`
+    result += `${p.name} 's address is: ${p.address.street}, ${p.address.number}`;
+    return result;
+}
+
+console.log (getPlusPersonData(person));

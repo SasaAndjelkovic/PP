@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>THe XMLHttpRequest Object</h1>
+
+    <button type="button" onclick="loadDoc()">Get my CD Collection</button>
+    <br><br>
+    <table id="demo"></table>
+
+    <script>
+        let loadDoc = () => {
+            let xhttp = new XMLHttpRequest ();
+            xhttp.onreadystatechange = () => {
+                if(this.readyState == 4 && this.status == 200) {
+                    myFunction(this);
+                }
+            }
+
+            xhttp.open("GET", "cd.xml", true);
+            xhttp.send();
+        }
+
+        let myFunction = (xml) => {
+            let xmlDoc = xml.responseXML;
+            let table = '<tr><th>Artist</th><th>Title</th></tr>';
+            let x = xmlDoc.getElementsByTagName('CD');
+
+            for(let i = 0; i < x.length; i++) {
+                table += "<tr><td>" + x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+                         "</td><td>" + x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+                         "</td><td>";
+            }
+            document.getElementById("demo").innerHTML = table;
+        }
+    </script>
+</body>
+</html>

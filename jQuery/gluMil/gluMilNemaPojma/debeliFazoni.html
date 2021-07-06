@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="id01"></div>
+    <script>
+        let xmlhttp = new XMLHttpRequest ();
+        let url = 'myTutorirals.txt';
+
+        xmlhttp.onreadystatechange = () => {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                let myArr = JSON.parse (xmlhttp.responseText);
+                myFunction(myArr);
+            }
+
+        };
+
+        xmlhttp.open('GET', url, true);
+        xmlhttp.send();
+
+        let myFunction = (arr) => {
+            let out = '';
+            for (let i = 0; arr.length; i++) {
+                out += 'a href"' + arr[i].url + '">' + 
+                        arr[i].display + '</a><br>';
+            }
+            document.getElementById('id01').innerHTML = out;
+        }
+
+    </script>
+    
+</body>
+
+</html>

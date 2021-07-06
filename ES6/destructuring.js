@@ -8,4 +8,4 @@ const sandwich = {
 // console.log (bread);  //=> italian
 
 let { bread, meat, cheese } = sandwich; //destructuring
-console.log (cheese);
+console.log (cheese);    // -> swiss
