@@ -1,0 +1,22 @@
+header {
+    position: relative;
+    width: 100%;
+}
+#searchList {
+    position: absolute;
+    top: 50px;
+    background-color:#f0f0f0;
+    list-style: none;
+    padding-left: 0;
+}
+#searchList li {
+    border-bottom: 1px solid black;
+    text-align: left;
+    text-overflow: clip;
+}
+.card{
+    margin: 10px;
+}
+.card img{
+    width: 100%;
+}
