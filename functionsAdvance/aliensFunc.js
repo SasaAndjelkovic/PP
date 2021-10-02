@@ -74,7 +74,7 @@ function a() {
     };
 }
 
-a(); // => A! but return is B!
+a(); // => A! but return is B!    -> sta mislis o: a()()
 
 
 //

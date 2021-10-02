@@ -31,7 +31,7 @@ if (x === 2) {
     console.log(x);
 } 
 console.log(x);      // nista se ne consologuje, zato sto je nastala greska
-
+//TypeError: Assignment to constant variable.
 
 
 // 4. example
@@ -42,7 +42,7 @@ if (x === 2){
     const x = 3;
     console.log(x);
 }
-console.log(x);     // TypeError: Assignment to constant variable
+console.log(x);     // 3    2
 
 
 
@@ -189,7 +189,7 @@ const car = {
 const {name, yearOfProduction} = car;
 console.log(name);
 
-const {name: model, yearOfProduction: year} = car;      //  prezima se skraceni naziv. Narocito za yearOfProduction
+const {name: model, yearOfProduction: year} = car;      //  preuzima se skraceni naziv. Narocito za yearOfProduction
 console.log(model);
 
 const {numberOfDoor = 4};
